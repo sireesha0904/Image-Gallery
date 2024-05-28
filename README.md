@@ -17,7 +17,7 @@ This project is a responsive image gallery built with HTML, CSS, and JavaScript.
 
 ## Demo
 ##- Light Theme
-![[Light Mode](https://github.com/sireesha0904/Image-Gallery/assets/131472116/ccb315d4-99b2-4b1a-a4e8-dd6d238cd3f2) 
+![Light Mode](https://github.com/sireesha0904/Image-Gallery/assets/131472116/ccb315d4-99b2-4b1a-a4e8-dd6d238cd3f2) 
 
 ##- Dark Theme
 ![Dark Mode](https://github.com/sireesha0904/Image-Gallery/assets/131472116/20776778-cfe4-4b33-a851-400791d1ecae) 
