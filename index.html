@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Responsive Image Gallery</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="icon" href="favicon.png" type="image/x-icon" />
+
+</head>
+<body>
+    <header>
+        <div class="header-content">
+            <i class="fas fa-images"></i>
+            <h1>Image Gallery</h1>
+        </div>
+    </header>
+
+    <div class="gallery-container">
+        <div class="search-container">
+            <i class="fas fa-search search-icon"></i>
+
+            <input type="text" id="search-bar" placeholder="Search images...">
+
+            <button id="theme-toggle" class="theme-toggle">
+                <i class="fas fa-sun" id="sun-icon"></i>
+                <i class="fas fa-moon" id="moon-icon"></i>
+            </button>
+        </div>
+        <div class="gallery" id="gallery">
+            <!-- Images will be added dynamically here -->
+        </div>
+    </div>
+
+    <div id="lightbox" class="lightbox">
+        <span class="close">&times;</span>
+        <img class="lightbox-content" id="lightbox-img">
+        <a class="prev" id="prev">&#10094;</a>
+        <a class="next" id="next">&#10095;</a>
+        <a class="download" id="download" download>Download</a>
+    </div>
+
+    <footer>
+        <div class="social-icons">
+            <a href="https://github.com/sireesha0904"><i class="fab fa-github"></i></a>
+            <a href="https://x.com/_sireeshamodi_?t=eYo7MiYv016liFGqS3AEYw&s=09"><i class="fab fa-twitter"></i></a>
+            <a href="https://www.instagram.com/sireesha_modi/"><i class="fab fa-instagram"></i></a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
