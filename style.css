@@ -27,6 +27,25 @@ body.dark-mode {
     --lightbox-bg-color: rgba(98, 98, 98, 0.8);
 }
 
+header {
+    background-color: var(--container-bg-color);
+    padding: 10px 0;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.header-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.header-content i {
+    font-size: 30px;
+    color: var(--text-color);
+}
+
 .gallery-container {
     max-width: 1200px;
     margin: 20px auto;
@@ -46,7 +65,7 @@ body.dark-mode {
 
 #search-bar {
     flex: 1;
-    padding: 10px 40px 10px 10px;
+    padding: 10px 50px 10px 40px; /* Increased left padding for gap between icon and input */
     font-size: 16px;
     border: 1px solid #ccc;
     border-radius: 4px;
@@ -57,12 +76,11 @@ body.dark-mode {
 
 .search-icon {
     position: absolute;
-    right: 50px;
-    top: 50%;
-    transform: translateY(-50%);
-    font-size: 16px;
+    left: 15px; /* Adjusted position for the search icon */
+    font-size: 18px; /* Slightly increased font size for better visibility */
     color: #aaa;
 }
+
 
 .theme-toggle {
     background: none;
@@ -165,35 +183,68 @@ body.dark-mode .theme-toggle .fa-moon {
     font-size: small;
 }
 
-.download:hover {
-    background-color: #05537279;
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+footer {
+    background-color: var(--container-bg-color);
+    padding: 20px;
+    text-align: center;
+    margin-top: 20px;
 }
 
-.download:active {
-    background-color: #033d4d;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+footer p {
+    font-size: 16px;
+    color: var(--text-color);
 }
 
-.close:hover, .prev:hover, .next:hover {
-    background-color: rgba(255, 255, 255, 0.2);
+.social-icons a {
+    margin: 0 10px;
+    font-size: 20px;
+    color: var(--text-color);
+    transition: color 0.3s;
 }
 
-/* Hover effect for prev and next buttons */
-.next {
-    top: 50%;
-    right: 20px;
-    transform: translateY(-50%);
-    transition: transform 0.3s;
+.social-icons a:hover {
+    color: var(--input-text-color);
 }
 
-.next:hover {
-    transform: translateY(-50%) translateX(10px);
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    #search-bar {
+        font-size: 14px; /* Smaller font size on smaller screens */
+    }
+
+    .gallery {
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); /* More columns on smaller screens */
+    }
+
+    .close, .prev, .next, .download {
+        font-size: 18px; /* Smaller buttons on smaller screens */
+        padding: 8px; /* Smaller padding on smaller screens */
+    }
 }
 
-/* Add the following CSS to create a hover effect for the next image */
-.hover-effect {
-    transform: scale(1.05);
-    transition: transform 0.3s;
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: var(--container-bg-color);
+    position: relative;
+    margin-top: 20px;
 }
 
+footer .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 10px;
+}
+
+footer .social-icons i {
+    font-size: 24px;
+    cursor: pointer;
+    color: var(--text-color);
+    transition: color 0.3s;
+}
+
+footer .social-icons i:hover {
+    color: #555; /* Change color on hover */
+}
