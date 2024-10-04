@@ -9,7 +9,12 @@ document.addEventListener("DOMContentLoaded", () => {
         { src: "images/night.avif", alt: "night", name: "night/moon/dark" },
         { src: "images/night.jpg", alt: "night", name: "night/moon/dark" },
         { src: "images/rabit-1.png", alt: "rabit", name: "rabit" },
-        { src: "images/rabit-2.jpg", alt: "rabit", name: "rabit" }
+        { src: "images/rabit-2.jpg", alt: "rabit", name: "rabit" },
+        { src: "images/butterfly.png", alt: "butterfly", name: "hand/butterfly" },
+        { src: "images/flower.png", alt: "clouds", name: "butterfly/flower" },
+        { src: "images/coffee.jpg", alt: "coffee", name: "evening/coffee" },
+        { src: "images/clouds.jpg", alt: "clouds", name: "clouds/sky" }
+      
     ];
 
     const gallery = document.getElementById("gallery");
@@ -17,6 +22,8 @@ document.addEventListener("DOMContentLoaded", () => {
     const lightboxImg = document.getElementById("lightbox-img");
     const themeToggleBtn = document.getElementById("theme-toggle");
     const searchBar = document.getElementById("search-bar");
+    const downloadBtn = document.getElementById("download");
+    let currentIndex = 0; // To keep track of the current image index
     let filteredImages = images;
 
     // Generate the gallery
@@ -34,8 +41,9 @@ document.addEventListener("DOMContentLoaded", () => {
     // Open lightbox
     gallery.addEventListener("click", (event) => {
         if (event.target.tagName === "IMG") {
-            const index = event.target.getAttribute("data-index");
-            lightboxImg.src = images[index].src;
+            currentIndex = event.target.getAttribute("data-index");
+            lightboxImg.src = images[currentIndex].src;
+            downloadBtn.href = images[currentIndex].src; // Set download link
             lightbox.style.display = "flex";
         }
     });
@@ -44,6 +52,24 @@ document.addEventListener("DOMContentLoaded", () => {
     document.querySelector(".close").addEventListener("click", () => {
         lightbox.style.display = "none";
     });
+
+    // Navigate to the previous image
+    document.getElementById("prev").addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + images.length) % images.length; // Wrap around
+        updateLightboxImage();
+    });
+
+    // Navigate to the next image
+    document.getElementById("next").addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % images.length; // Wrap around
+        updateLightboxImage();
+    });
+
+    // Function to update lightbox image and download link
+    function updateLightboxImage() {
+        lightboxImg.src = images[currentIndex].src;
+        downloadBtn.href = images[currentIndex].src; // Update download link
+    }
 
     // Theme toggle
     themeToggleBtn.addEventListener("click", () => {
